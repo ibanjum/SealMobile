@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+    <element type="LineEdit" style="LineEdit">
+        <attribute name="Color" value="0.69 0.69 0.69 1" />
+        <element type="Text" style="Text">
+            <attribute name="Color" value="1 1 1 1" />
+        </element>
+    </element>
+</elements>

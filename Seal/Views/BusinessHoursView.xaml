@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Seal.CustomUI"
+    x:Class="Seal.Views.BusinessHoursView">
+
+    <ContentView.Content>
+
+        <StackLayout Spacing="0">
+
+            <StackLayout Spacing="0" Padding="0, 16, 0, 0">
+                <BoxView HeightRequest="1" BackgroundColor="LightGray"/>
+                <StackLayout Padding="16, 0, 16, 0" HeightRequest="44" Orientation="Horizontal" BackgroundColor="{StaticResource BackGroundSecondary}">
+                    <Label Text="Open 24/7?" Style="{StaticResource BodyText}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Switch IsToggled="{Binding IsNotAlwaysOpen}"  HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                </StackLayout>
+                <BoxView HeightRequest="1" BackgroundColor="LightGray"/>
+            </StackLayout>
+            <CollectionView
+                Opacity="{Binding Opacity}" IsEnabled="{Binding IsNotAlwaysOpen}"
+                x:Name="collectionView"
+                Header="" Footer=""
+                ItemsSource="{Binding BusinessHours}"
+                SelectionMode="Single" SelectedItem="{Binding SelectedBusinessHours}"
+                BackgroundColor="{StaticResource BackGroundPrimary}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="16" Span="1"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout BackgroundColor="{StaticResource BackGroundSecondary}" Spacing="0">
+                            <StackLayout Spacing="0" BackgroundColor="{StaticResource BackGroundPrimary}">
+                                <Button
+                                    Text="Delete"
+                                    Style="{StaticResource DeleteButton}"
+                                    Command="{Binding BindingContext.DeleteButtonCommand, Source={x:Reference Name=collectionView}}"
+                                    CommandParameter="{Binding .}"
+                                    HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                            <BoxView HeightRequest="1" BackgroundColor="LightGray"/>
+                            <CollectionView ItemsSource="{Binding Days}" Margin="8, 0, 8, 0" HeightRequest="100" ItemsLayout="VerticalGrid, 7">
+
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout Padding="10">
+                                            <ImageButton 
+                                                BackgroundColor="{StaticResource BackGroundSecondary}"
+                                                Style="{StaticResource DayButton}"
+                                                Command="{Binding BindingContext.DayButtonCommand, Source={x:Reference Name=collectionView}}"
+                                                CommandParameter="{Binding .}"/>
+                                            <Label
+                                                        Text="{Binding Name}"
+                                                        Style="{StaticResource BodyText}"
+                                                        HorizontalOptions="Center"
+                                                        HorizontalTextAlignment="Center"/>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+
+
+                            <Grid Padding="24, 0, 24, 16" RowSpacing="16">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0"
+                                     Text="Opens"
+                                     Style="{StaticResource BodyText}"
+                                     VerticalTextAlignment="Center"/>
+                                <TimePicker Time="{Binding Opens}" Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+
+
+                                <Label Grid.Row="1" Grid.Column="0"
+                                     Text="Closes"
+                                     Style="{StaticResource BodyText}"
+                                     VerticalTextAlignment="Center"/>
+                                <TimePicker Time="{Binding Closes}" Grid.Row="1" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+
+                            </Grid>
+                            <BoxView HeightRequest="1" BackgroundColor="LightGray"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.FooterTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Button
+                             Text="{Binding BindingContext.AddButtonText, Source={x:Reference Name=collectionView}}"
+                             Margin="120, 24, 120, 24"
+                             Style="{StaticResource SecondaryButton}"
+                             Command="{Binding BindingContext.AddButtonCommand, Source={x:Reference Name=collectionView}}"
+                             WidthRequest="60"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.FooterTemplate>
+            </CollectionView>
+
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

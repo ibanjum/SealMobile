@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Seal.CustomUI"
+    BackgroundColor="{StaticResource  BackGroundPrimary}"
+    x:Class="Seal.RestaurantAdminPages.BasicInfoPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="24" Margin="16, 0, 16, 36">
+            <StackLayout  Spacing="16">
+                <Label Text="{Binding BasicInfo.Name}" Style="{StaticResource HeaderLabel}" HorizontalOptions="Center"/>
+                <Label Text="{Binding BasicInfoDescription}" Style="{StaticResource BodyText}"/>
+            </StackLayout>
+
+
+            <Frame Style="{StaticResource EntryFrame}">
+                <local:CustomEntryRenderer Text="{Binding BasicInfo.Address1}" Placeholder="Address 1" Style="{StaticResource CustomEntry}" />
+            </Frame>
+
+            <Frame Style="{StaticResource EntryFrame}">
+                <local:CustomEntryRenderer Text="{Binding BasicInfo.Address2}" Placeholder="Address 2" Style="{StaticResource CustomEntry}" />
+            </Frame>
+
+            <Frame Style="{StaticResource EntryFrame}">
+                <local:CustomEntryRenderer Text="{Binding BasicInfo.City}" Placeholder="City" Style="{StaticResource CustomEntry}" />
+            </Frame>
+
+            <Grid RowSpacing="24" ColumnSpacing="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource EntryFrame}" HorizontalOptions="FillAndExpand">
+                    <local:CustomEntryRenderer Text="{Binding BasicInfo.State}" Placeholder="State" Style="{StaticResource CustomEntry}" />
+                </Frame>
+
+                <Frame Grid.Row="0" Grid.Column="1" Style="{StaticResource EntryFrame}" HorizontalOptions="FillAndExpand">
+                    <local:CustomEntryRenderer Text="{Binding BasicInfo.ZipCode}" Placeholder="ZipCode" Style="{StaticResource CustomEntry}" />
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.Column="0" Style="{StaticResource EntryFrame}" HorizontalOptions="FillAndExpand">
+                    <local:CustomEntryRenderer Text="{Binding BasicInfo.Country}" Placeholder="Country" Style="{StaticResource CustomEntry}" />
+                </Frame>
+            </Grid>
+
+            <Button VerticalOptions="EndAndExpand" Text="{Binding ButtonText}" Command="{Binding ButtonCommand}" Style="{StaticResource PrimaryButton}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Seal.Views"
+    x:Class="Seal.RestaurantAdminPages.AddMenuItemPage"
+    BackgroundColor="{StaticResource  BackGroundPrimary}">
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <StackLayout  Spacing="16" Margin="16, 0, 16, 0">
+                <Label Text="{Binding Title}" Style="{StaticResource HeaderLabel}"/>
+                <Label Text="{Binding Description}" Style="{StaticResource BodyText}"/>
+            </StackLayout>
+
+            <views:AddMenuItemView/>
+
+            <StackLayout Spacing="16" Margin="24, 0, 24, 24" Orientation="Horizontal">
+                <Button VerticalOptions="EndAndExpand" Text="{Binding AddCategpryButtonText}" Command="{Binding AddCategoryCommand}" Style="{StaticResource SecondaryButton}"/>
+                <Button VerticalOptions="EndAndExpand" Text="{Binding PreviewButtonText}" Command="{Binding PreviewCommand}" Style="{StaticResource PrimaryButton}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

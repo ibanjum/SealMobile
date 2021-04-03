@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Seal.RestaurantAdminPages.GetStarted"
+    BackgroundColor="{StaticResource  BackGroundPrimary}"
+    Padding="0">
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Start">
+            <Grid RowSpacing="36">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="{Binding GetStartedImage}" Aspect="AspectFill"/>
+                <StackLayout Grid.Row="1" Spacing="8" Margin="16, 0, 16, 0">
+                    <Label Text="{Binding GetStatedTitle}" Style="{StaticResource  HeaderLabel}"/>
+                    <Label Text="{Binding GetStatedDescription}" Style="{StaticResource BodyText}"/>
+                </StackLayout>
+                <Button VerticalOptions="EndAndExpand" Grid.Row="2" Margin="16, 0, 16, 36" Text="{Binding GetStartedButtonText}" Command="{Binding GetStartedButtonCommand}" Style="{StaticResource PrimaryButton}"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Seal.RestaurantAdminPages.MenuOptionsPage"
+     BackgroundColor="{StaticResource  BackGroundPrimary}">
+    <ContentPage.Content>
+        <StackLayout Margin="16, 0, 16, 0">
+
+            <StackLayout  Spacing="16">
+                <Label Text="{Binding Title}" Style="{StaticResource HeaderLabel}"/>
+                <Label Text="{Binding Description}" Style="{StaticResource BodyText}"/>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="16">
+                <Button
+                    Text="{Binding MenuPhoneButtonText}"
+                    Style="{StaticResource SecondaryButton}"
+                    Command="{Binding SelectPhotoCommand}"
+                    WidthRequest="200"/>
+
+                <Button
+                    Text="{Binding IndividualButtonText}"
+                    Style="{StaticResource SecondaryButton}"
+                    Command="{Binding IndividualCommand}"/>
+            </StackLayout>
+
+            <Button Margin="24" VerticalOptions="EndAndExpand" Text="{Binding SkipButtonText}" Command="{Binding SkipCommand}" Style="{StaticResource PrimaryButton}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:Seal.Converters"
+    x:Class="Seal.Views.MenuItemsListView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <converters:MenuItemHeightConvert x:Key="convertHeight"/>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <RefreshView Grid.Row="0" InputTransparent="False"  Command="{Binding LoadCategoriesCommand}" IsRefreshing="{Binding IsLoadingCategories, Mode=TwoWay}" VerticalOptions="EndAndExpand">
+
+                <StackLayout>
+                    <CollectionView Header="" x:Name="MenuItemsList" ItemsSource="{Binding Restaurant.Items}" IsGrouped="True" >
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" ItemSpacing="8"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.HeaderTemplate>
+                            <DataTemplate>
+                                <StackLayout Spacing="0">
+                                    <Image Source="{Binding BindingContext.Restaurant.Image, Source={x:Reference Name=MenuItemsList}}"
+                                           HorizontalOptions="Fill" HeightRequest="150" Aspect="AspectFill"/>
+                                    <StackLayout >
+                                        <StackLayout BackgroundColor="{StaticResource BackGroundSecondary}" Padding="16">
+                                            <Label Text="{Binding BindingContext.Restaurant.Name, Source={x:Reference Name=MenuItemsList}}" Style="{StaticResource HeaderLabel}"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding BindingContext.Address, Source={x:Reference Name=MenuItemsList}}" TextColor="Black" FontSize="Micro"/>
+                                                <Label Text="More Info" HorizontalOptions="EndAndExpand" TextColor="Black" FontSize="Micro" FontAttributes="Bold"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" Margin="16, 0, 16, 0">
+                                            <Button Text="Menu" HorizontalOptions="Start"
+                                            CornerRadius="20"
+                                            HeightRequest="40"
+                                            TextTransform="None"
+                                            TextColor="Black"
+                                            BackgroundColor="LightGray"/>
+                                            <Label Text="+" Style="{x:StaticResource HeaderLabel}" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding BindingContext.AddMoreCommand, Source={x:Reference Name=MenuItemsList}}"/>
+                                                </Label.GestureRecognizers>
+                                            </Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.HeaderTemplate>
+                        <CollectionView.GroupHeaderTemplate>
+                            <DataTemplate>
+                                <Label Padding="16, 16, 16, 0" Text="{Binding Category}" Style="{StaticResource HeaderLabel}" />
+                            </DataTemplate>
+                        </CollectionView.GroupHeaderTemplate>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <StackLayout Spacing="0" Margin="16, 0, 16, 0" BackgroundColor="{StaticResource BackGroundSecondary}">
+                                        <StackLayout Orientation="Horizontal" Padding="16">
+                                            <StackLayout HorizontalOptions="StartAndExpand" Spacing="8" >
+                                                <Label Text="{Binding Name}" Style="{StaticResource BodyText}" FontAttributes="Bold"/>
+                                                <Label Text="{Binding Description}" Style="{StaticResource BodyText}" TextColor="DarkSlateGray" />
+                                                <Label Text="{Binding Price, StringFormat='${0}'}" Style="{StaticResource BodyText}"/>
+                                            </StackLayout>
+                                            <Image Source="{Binding Image}" HeightRequest="{Binding Image, Converter={x:StaticResource convertHeight}}" WidthRequest="{Binding Image, Converter={x:StaticResource convertHeight}}" Aspect="AspectFill" HorizontalOptions="EndAndExpand"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </RefreshView>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

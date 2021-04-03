@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "dgSpecHash": "7bBMnBbA1t7uTyo2WVSwp+AYs5An/an/rhYZF5WrmHZawhmGDJybjyNEd9RwvKFzNLVGcn8+BQi+dqL/raUJSQ==",
+  "success": true,
+  "projectFilePath": "/Users/ib/Projects/Seal/Seal/Seal.csproj",
+  "expectedPackageFiles": [
+    "/Users/ib/.nuget/packages/com.airbnb.xamarin.forms.lottie/4.0.9/com.airbnb.xamarin.forms.lottie.4.0.9.nupkg.sha512",
+    "/Users/ib/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/ib/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
+    "/Users/ib/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/Users/ib/.nuget/packages/portable.ninject/3.3.1/portable.ninject.3.3.1.nupkg.sha512",
+    "/Users/ib/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/ib/.nuget/packages/urhosharp.forms/1.9.67/urhosharp.forms.1.9.67.nupkg.sha512",
+    "/Users/ib/.nuget/packages/urhosharp.tools/1.8.93/urhosharp.tools.1.8.93.nupkg.sha512",
+    "/Users/ib/.nuget/packages/xam.plugin.media/5.0.1/xam.plugin.media.5.0.1.nupkg.sha512",
+    "/Users/ib/.nuget/packages/xamarin.essentials/1.6.1/xamarin.essentials.1.6.1.nupkg.sha512",
+    "/Users/ib/.nuget/packages/xamarin.forms/5.0.0.2012/xamarin.forms.5.0.0.2012.nupkg.sha512",
+    "/Users/ib/.nuget/packages/yelp.api/1.3.0/yelp.api.1.3.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Portable.Ninject 3.3.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Portable.Ninject",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Yelp.Api 1.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Yelp.Api",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
+}

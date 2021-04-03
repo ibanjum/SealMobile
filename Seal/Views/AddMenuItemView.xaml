@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Seal.CustomUI"
+    x:Class="Seal.Views.AddMenuItemView">
+    <ContentView.Content>
+
+        <StackLayout Spacing="0">
+            <Picker ItemsSource="{Binding Categories}" SelectedItem="{Binding Items.Category}" Title="{Binding SelectCategoryText}" Margin="16, 16, 16, 0"/>
+
+            <ListView x:Name="listview" Footer="" SelectionMode="None" ItemsSource="{Binding Items}" HasUnevenRows="True" BackgroundColor="{StaticResource BackGroundPrimary}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Spacing="0">
+                                <Button
+                                    Text="Delete"
+                                    Style="{StaticResource DeleteButton}"
+                                    Command="{Binding BindingContext.DeleteCommand, Source={x:Reference Name=listview}}"
+                                    CommandParameter="{Binding .}"
+                                    HorizontalOptions="EndAndExpand"/>
+
+                                <BoxView HeightRequest="1" BackgroundColor="LightGray"/>
+                                <StackLayout BackgroundColor="{StaticResource BackGroundSecondary}" Spacing="16" Padding="16">
+                                    <ImageButton
+                                        BackgroundColor="Transparent"
+                                        x:Name="imageButton"
+                                        Command="{Binding BindingContext.ImageCommand, Source={x:Reference Name=listview}, Mode=TwoWay}"
+                                        CommandParameter="{Binding .}"
+                                        BorderWidth="1"
+                                        Aspect="AspectFill"
+                                        BorderColor="Gray"
+                                        Source="{Binding Image}"
+                                        HeightRequest="150"
+                                        WidthRequest="150"
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="CenterAndExpand"/>
+                                    <Grid ColumnSpacing="16">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="70*"/>
+                                            <ColumnDefinition Width="30*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Frame Grid.Column="0" Style="{StaticResource EntryFrame}">
+                                            <local:CustomEntryRenderer Text="{Binding Name}" Placeholder="Name" Style="{StaticResource CustomEntry}" />
+                                        </Frame>
+                                        <Frame Grid.Column="1" Style="{StaticResource EntryFrame}">
+                                            <local:CustomEntryRenderer Text="{Binding Price}" Placeholder="Price" Style="{StaticResource CustomEntry}" />
+                                        </Frame>
+                                    </Grid>
+                                    <Frame Style="{StaticResource EntryFrame}">
+                                        <local:CustomEditor HeightRequest="100" Text="{Binding Description}" Placeholder="Description" Style="{StaticResource CustomEntry}" />
+                                    </Frame>
+                                </StackLayout>
+                                <BoxView HeightRequest="1" BackgroundColor="LightGray"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.FooterTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Button
+                             Text="{Binding BindingContext.AddAnotherButtonText, Source={x:Reference Name=listview}}"
+                             Margin="120, 24, 120, 24"
+                             Style="{StaticResource SecondaryButton}"
+                             Command="{Binding BindingContext.AddAnotherCommand, Source={x:Reference Name=listview}}"
+                             WidthRequest="60"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </ListView.FooterTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

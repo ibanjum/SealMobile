@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    x:Class="Seal.RestaurantAdminPages.SetUpFinishPage"
+    BackgroundColor="{StaticResource  BackGroundPrimary}">
+    <ContentPage.Content>
+        <StackLayout Spacing="16" Padding="16, 0, 16, 0">
+            <Label Text="{Binding Title}" Style="{x:StaticResource HeaderLabel}" HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding Description}" Style="{x:StaticResource BodyText}" HorizontalTextAlignment="Center"/>
+            <lottie:AnimationView x:Name="AnimationView"
+                         Animation="{Binding CongratsLottie}"
+                         AutoPlay="True"
+                         HeightRequest="400"
+                         WidthRequest="400"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center" />
+
+            <Button Margin="24, 0, 24, 24" VerticalOptions="EndAndExpand" Text="{Binding ButtonText}" Command="{Binding NextCommand}" Style="{StaticResource PrimaryButton}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

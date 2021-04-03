@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="this"
+    xmlns:views="clr-namespace:Seal.Views"
+    x:Class="Seal.RestaurantAdminPages.RestaurantHoursPage"
+    BackgroundColor="{StaticResource BackGroundPrimary}">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" Spacing="0">
+
+            <StackLayout Spacing="4" Margin="16, 0, 16, 0">
+                <Label Text="{Binding PageTitle}" Style="{StaticResource HeaderLabel}"/>
+                <Label Text="{Binding PageDescription}" Style="{StaticResource BodyText}"/>
+            </StackLayout>
+
+            <views:BusinessHoursView/>
+
+            <Button Margin="24, 0, 24, 24" VerticalOptions="EndAndExpand" Text="{Binding ButtonText}" Command="{Binding ButtonCommand}" Style="{StaticResource PrimaryButton}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

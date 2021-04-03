@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:views="clr-namespace:Seal.Views" xmlns:urho="clr-namespace:Urho.Forms;assembly=UrhoSharp.Forms"
+             x:Class="Seal.Pages.AdminDashboard.AdminDashboardPage"
+            NavigationPage.HasNavigationBar="False"
+            BarBackgroundColor="Black"
+            SelectedTabColor="White"
+            UnselectedTabColor="Gray">
+    <!--Pages can be added as references or inline-->
+    <ContentPage Title="Floor Plan">
+        <urho:UrhoSurface x:Name="urhoSurface"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="true"></urho:UrhoSurface>
+    </ContentPage>
+    <ContentPage Title="Restaurant Info">
+        <StackLayout >
+            <views:MenuItemsListView/>
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

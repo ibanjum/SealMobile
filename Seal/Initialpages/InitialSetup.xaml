@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Seal.Initialpages.InitialSetup">
+    <ContentPage.Content>
+            <Grid HorizontalOptions="Center" VerticalOptions="Center" RowSpacing="20">
+                    <Label Grid.Row="0" Text="Enter your restaurant name" FontAttributes="Bold" FontSize="20" TextColor="White"/>
+                    <Entry x:Name="entry" Grid.Row="1" PlaceholderColor="Gray" Placeholder="Restaurant Name" TextColor="White" BackgroundColor="Transparent"/>
+                    <Button Grid.Row="2" BackgroundColor="Orange" Text="Continue" CornerRadius="25" Pressed="Btn_pressed"/>
+                </Grid>
+    </ContentPage.Content>
+</ContentPage>

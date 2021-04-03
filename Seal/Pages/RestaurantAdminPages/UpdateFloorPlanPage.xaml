@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:urho="clr-namespace:Urho.Forms;assembly=UrhoSharp.Forms"
+             x:Class="Seal.RestaurantAdminPages.UpdateFloorPlanPage">
+
+    <ContentPage.Content>
+        <urho:UrhoSurface x:Name="urhoSurface"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="true"></urho:UrhoSurface>
+    </ContentPage.Content>
+</ContentPage>
