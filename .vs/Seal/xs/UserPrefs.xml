@@ -1,15 +1,13 @@
 ﻿<Properties StartupConfiguration="{06666A2B-B727-49B3-9241-3EA1C705A051}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Seal/App.xaml.cs">
-    <Files>
-      <File FileName="Seal/App.xaml.cs" Line="39" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Seal" expanded="True">
             <Node name="Seal" expanded="True">
-              <Node name="App.xaml" expanded="True">
-                <Node name="App.xaml.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="DataClients" expanded="True">
+                <Node name="DetailRestaurantDataClient.cs" selected="True" />
               </Node>
             </Node>
           </Node>

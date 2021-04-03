@@ -33,7 +33,6 @@
   <ItemGroup>
     <Folder Include="CustomUI\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Initialpages\" />
     <Folder Include="GraphicalInterface\" />
     <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\RestaurantSignUpVMs\" />
@@ -42,7 +41,6 @@
     <Folder Include="Models\DTOs\" />
     <Folder Include="Ninject\" />
     <Folder Include="Navigation\" />
-    <Folder Include="ContentViews\" />
     <Folder Include="Views\" />
     <Folder Include="Utilities\" />
     <Folder Include="Converters\" />

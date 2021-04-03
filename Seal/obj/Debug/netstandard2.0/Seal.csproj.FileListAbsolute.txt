@@ -6,12 +6,10 @@
 /Users/ib/Projects/Seal/Seal/bin/Debug/netstandard2.0/Seal.dll
 /Users/ib/Projects/Seal/Seal/bin/Debug/netstandard2.0/ref/Seal.dll
 /Users/ib/Projects/Seal/Seal/bin/Debug/netstandard2.0/Seal.pdb
+/Users/ib/Projects/Seal/Seal/obj/Debug/netstandard2.0/Seal.csprojAssemblyReference.cache
 /Users/ib/Projects/Seal/Seal/obj/Debug/netstandard2.0/Seal.Resources.AppResources.resources
 /Users/ib/Projects/Seal/Seal/obj/Debug/netstandard2.0/Seal.csproj.GenerateResource.cache
 /Users/ib/Projects/Seal/Seal/obj/Debug/netstandard2.0/App.xaml.g.cs
-/Users/ib/Projects/Seal/Seal/obj/Debug/netstandard2.0/ContentViews/BusinessHoursEditPage.xaml.g.cs
-/Users/ib/Projects/Seal/Seal/obj/Debug/netstandard2.0/Initialpages/Contact.xaml.g.cs
-/Users/ib/Projects/Seal/Seal/obj/Debug/netstandard2.0/Initialpages/InitialSetup.xaml.g.cs
 /Users/ib/Projects/Seal/Seal/obj/Debug/netstandard2.0/Pages/AdminDashboard/AdminDashboardPage.xaml.g.cs
 /Users/ib/Projects/Seal/Seal/obj/Debug/netstandard2.0/Pages/RestaurantAdminPages/AdditionInfoPage.xaml.g.cs
 /Users/ib/Projects/Seal/Seal/obj/Debug/netstandard2.0/Pages/RestaurantAdminPages/AddMenuItemPage.xaml.g.cs
